@@ -140,7 +140,7 @@ header {
     height: 128px;
     object-fit: contain;
     margin-bottom: 32px;
-    border-radius: 15%;
+    border-radius: 20%;
 }
 
 #welcome-message {

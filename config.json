@@ -1,0 +1,17 @@
+{
+    "discordLink": "https://discord.gg/GHYDFC9fyV",
+    "translations": {
+        "en": {
+            "logo": "HUTSULS",
+            "welcomeMessage": "Welcome to our Discord server",
+            "joinButton": "Join the Server",
+            "title": "HUTSULS"
+        },
+        "ua": {
+            "logo": "ГУЦУЛИ",
+            "welcomeMessage": "Ласкаво просимо до нашого сервера Discord",
+            "joinButton": "Приєднатися до сервера",
+            "title": "ГУЦУЛИ"
+        }
+    }
+}
