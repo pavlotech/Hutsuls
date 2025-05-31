@@ -140,7 +140,7 @@ header {
     height: 128px;
     object-fit: contain;
     margin-bottom: 32px;
-    border-radius: 20%;
+    border-radius: 25%;
 }
 
 #welcome-message {
@@ -157,7 +157,7 @@ header {
     color: #FFFFFF;
     background-color: #606BEA;
     padding: 12px 32px;
-    border-radius: 8px;
+    border-radius: 10px;
     text-decoration: none;
     transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
 }
@@ -181,7 +181,6 @@ footer {
         width: 192px;
         height: 192px;
     }
-
     #welcome-message {
         font-size: 36px;
     }
@@ -193,5 +192,89 @@ footer {
     }
     50% {
         filter: blur(150px);
+    }
+}
+
+.lds-grid,
+.lds-grid div {
+    box-sizing: border-box;
+}
+
+.lds-grid {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-grid div {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    animation: lds-grid 1.2s linear infinite;
+}
+
+.lds-grid div:nth-child(1) {
+    top: 8px;
+    left: 8px;
+    animation-delay: 0s;
+}
+
+.lds-grid div:nth-child(2) {
+    top: 8px;
+    left: 32px;
+    animation-delay: -0.4s;
+}
+
+.lds-grid div:nth-child(3) {
+    top: 8px;
+    left: 56px;
+    animation-delay: -0.8s;
+}
+
+.lds-grid div:nth-child(4) {
+    top: 32px;
+    left: 8px;
+    animation-delay: -0.4s;
+}
+
+.lds-grid div:nth-child(5) {
+    top: 32px;
+    left: 32px;
+    animation-delay: -0.8s;
+}
+
+.lds-grid div:nth-child(6) {
+    top: 32px;
+    left: 56px;
+    animation-delay: -1.2s;
+}
+
+.lds-grid div:nth-child(7) {
+    top: 56px;
+    left: 8px;
+    animation-delay: -0.8s;
+}
+
+.lds-grid div:nth-child(8) {
+    top: 56px;
+    left: 32px;
+    animation-delay: -1.2s;
+}
+
+.lds-grid div:nth-child(9) {
+    top: 56px;
+    left: 56px;
+    animation-delay: -1.6s;
+}
+
+@keyframes lds-grid {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
     }
 }

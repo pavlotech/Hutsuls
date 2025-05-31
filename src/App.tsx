@@ -16,7 +16,7 @@ interface Config {
 }
 
 const App: React.FC = () => {
-    const [language, setLanguage] = useState('en');
+    const [language, setLanguage] = useState('ua');
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [config, setConfig] = useState<Config>({ discordLink: '', translations: {} });
     const [loading, setLoading] = useState(true);
@@ -26,16 +26,16 @@ const App: React.FC = () => {
         const fetchConfig = async () => {
             try {
                 const response = await fetch(
-                    'https://raw.githubusercontent.com/pavlotech/Hutsuls/main/config/config.json'
+                    'https://raw.githubusercontent.com/pavlotech/Hutsuls/master/config.json'
                 );
                 if (!response.ok) {
-                    throw new Error('Ошибка загрузки конфигурации');
+                    throw new Error('Failed to load configuration');
                 }
                 const content = await response.json();
                 setConfig(content);
                 setLoading(false);
             } catch {
-                setError('Не удалось загрузить конфигурацию');
+                setError('Failed to load configuration');
                 setLoading(false);
             }
         };
@@ -59,11 +59,23 @@ const App: React.FC = () => {
     };
 
     if (loading) {
-        return <div>Загрузка...</div>;
+        return (
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', color: '#FFFFFF' }}>
+                <div className="lds-grid">
+                    <div></div><div></div><div></div>
+                    <div></div><div></div><div></div>
+                    <div></div><div></div><div></div>
+                </div>
+            </div>
+        );
     }
 
     if (error) {
-        return <div>{error}</div>;
+        return (
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', color: '#FFFFFF' }}>
+                <p style={{ fontSize: '24px', fontWeight: '600' }}>{error}</p>
+            </div>
+        );
     }
 
     return (
@@ -92,13 +104,13 @@ const App: React.FC = () => {
                 </div>
             </header>
             <div className="content-wrapper">
-                <img alt="Logo" id="logo-center" src="src/assets/logo.svg" />
+                <img alt="Logo" id="logo-center" src="logo.svg" />
                 <h1 id="welcome-message">{config.translations[language]?.welcomeMessage || 'Welcome'}</h1>
-                <a href={config.discordLink || 'https://discord.gg/GHYDFC9fyV'} id="join-button" target="_blank">
+                <a href={config.discordLink} id="join-button" target="_blank">
                     {config.translations[language]?.joinButton || 'Join'}
                 </a>
             </div>
-            <footer>© hutsuls 2025</footer>
+            <footer>© hutsuls {new Date().getFullYear()}</footer>
         </div>
     );
 };
