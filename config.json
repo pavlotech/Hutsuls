@@ -5,13 +5,13 @@
             "logo": "HUTSULS",
             "welcomeMessage": "Welcome to our Discord server",
             "joinButton": "Join the Server",
-            "title": "HUTSULS"
+            "title": "Hutsuls"
         },
         "ua": {
             "logo": "ГУЦУЛИ",
             "welcomeMessage": "Ласкаво просимо до нашого сервера Discord",
             "joinButton": "Приєднатися до сервера",
-            "title": "ГУЦУЛИ"
+            "title": "Гуцули"
         }
     }
 }
